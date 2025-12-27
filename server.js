@@ -16,6 +16,7 @@ app.get("/", (request, response) =>{
 
 app.use("/api/v1/user", require('./routes/routes.js'));
 app.use("/api/v1/auth", require('./routes/authRoutes.js'));
+app.use("/api/v1/users", require('./routes/userRoutes.js'));
 
 const PORT = process.env.PORT;
 app.listen(PORT, (request, response) =>{

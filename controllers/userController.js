@@ -9,4 +9,9 @@ const userController = (request, response) => {
   }
 
 };
-module.exports = { userController }
+
+// Get User Details
+const getUserInfo = async (request, response) =>{
+  response.status(200).send("User Details");
+};
+module.exports = { userController, getUserInfo }
