@@ -1,9 +1,11 @@
 const express = require('express');
-const { userController } = require('../controllers/userController');
+const { userController, getUserInfo, updateUserInfo } = require('../controllers/userController');
 const router = express.Router();
 
 // Routes for different APIs
 router.get("/user", userController)
+router.get("/get-user", getUserInfo)
+router.put("/update-user/:userId", updateUserInfo)
 
 
 // Exporting this router

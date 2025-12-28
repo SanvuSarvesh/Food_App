@@ -7,13 +7,14 @@ const jwt = require('jsonwebtoken')
 // Register new user
 const registerNewUser = async (request, response) => {
   try {
-    const { username, email, password, firstname, mobileNo } = request.body;
+    const { username, email, password, firstname, lastname, mobileNo } = request.body;
     // checks for mandatory fields
     const missingFields = [];
     if (!username) missingFields.push('username');
     if (!email) missingFields.push('email');
     if (!password) missingFields.push('password');
     if (!firstname) missingFields.push('firstname');
+    if (!lastname) missingFields.push('lastname');
     if (!mobileNo) missingFields.push('mobileNo');
 
     if (missingFields.length > 0) {
@@ -41,6 +42,7 @@ const registerNewUser = async (request, response) => {
       email,
       password: hashedPassword,
       firstname,
+      lastname,
       mobileNo
     });
     response.status(201).send({

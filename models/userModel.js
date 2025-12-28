@@ -19,6 +19,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: [true, "firstname is required."]
   },
+  lastname: {
+    type: String,
+    required: [true, "lastname is required."]
+  },
   mobileNo: {
     type: String,
     required: [true]
@@ -32,6 +36,6 @@ const userSchema = mongoose.Schema({
     default: "NON_ADMIN",
     enum: ["ADMIN", "CAPTAIN", "NON_ADMIN"]
   }
-}, {timestamps:true})
+}, { timestamps: true })
 
-module.exports = mongoose.model('user',userSchema);
+module.exports = mongoose.model('user', userSchema);

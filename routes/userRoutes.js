@@ -1,6 +1,6 @@
 const express = require('express');
 const { route } = require('./routes');
-const { getUserInfo } = require('../controllers/userController');
+const { getUserInfo, updateUserInfo } = require('../controllers/userController');
 const authMiddlewares = require('../middlewares/authMiddlewares');
 const router = express.Router();
 
@@ -8,4 +8,6 @@ const router = express.Router();
 // Get User | GET
 router.get("/get-user", authMiddlewares, getUserInfo);
 
+// Update User | PUT
+router.put("/update-user/:userId", authMiddlewares, updateUserInfo);
 module.exports = router;
